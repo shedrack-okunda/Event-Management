@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home page</title>
+  </head>
+  <body>
+    <div>
+      <h2>All Events</h2>
+
+      <div>
+        <% if (events.length > 0) { %> 
+        <% events.forEach(event => { %> 
+        <div>
+            <h3><%= event.title %></h3>
+            <p><%= event.description %></p>
+            <a href="/event/<%= event.id %>">Read More</a>
+        </div>
+    <% }) %>
+<% } else { %>
+<p>No events available ath the moment.</p>
+ <% } %>
+      </div>
+    </div>
+  </body>
+</html>
